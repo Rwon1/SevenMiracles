@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Калькулятор трехфазного трансформатора</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #f8f9fa;
+    }
+
+    .background-animation {
+      position: absolute;
+      width: 300%;
+      height: 300%;
+      top: -100%;
+      left: -100%;
+      background: linear-gradient(-45deg, #3494e6, #ec6ead, #3494e6, #ec6ead);
+      animation: animateBackground 15s linear infinite;
+    }
+
+    @keyframes animateBackground {
+      0% {
+        transform: translate(-30%, -30%) rotate(0deg);
+      }
+      100% {
+        transform: translate(-30%, -30%) rotate(360deg);
+      }
+    }
+
+    .calculator {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1; /* Устанавливаем z-index, чтобы калькулятор находился выше фона */
+    }
+
+    button.btn-success {
+      background-image: linear-gradient(to right, #3494e6, #ec6ead);
+      color: #fff;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    button.btn-success:hover {
+      background-position: right center;
+    }
+
+    /* Остальные стили не изменялись */
+  </style>
+</head>
+<body>
+  <div class="background-animation"></div>
+  <div class="container">
+    <div class="calculator">
+      <h1>Калькулятор трехфазного трансформатора</h1>
+      <div class="form-group row">
+        <label for="voltage" class="col-sm-6 col-form-label text-right">Фазное напряжение (V):</label>
+        <div class="col-sm-6">
+          <input type="number" id="voltage" class="form-control">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="current" class="col-sm-6 col-form-label text-right">Фазный ток (A):</label>
+        <div class="col-sm-6">
+          <input type="number" id="current" class="form-control">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="powerFactor" class="col-sm-6 col-form-label text-right">Коэффициент мощности:</label>
+        <div class="col-sm-6">
+          <input type="number" id="powerFactor" step="0.01" class="form-control">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="primaryTurns" class="col-sm-6 col-form-label text-right">Число витков на первичной стороне:</label>
+        <div class="col-sm-6">
+          <input type="number" id="primaryTurns" class="form-control">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="secondaryTurns" class="col-sm-6 col-form-label text-right">Число витков на вторичной стороне:</label>
+        <div class="col-sm-6">
+          <input type="number" id="secondaryTurns" class="form-control">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="frequency" class="col-sm-6 col-form-label text-right">Частота (Гц):</label>
+        <div class="col-sm-6">
+          <input type="number" id="frequency" class="form-control">
+        </div>
+      </div>
+      <button onclick="calculate()" class="btn btn-success">Рассчитать</button>
+      <div class="result">
+        <label for="result">Активная мощность (P):</label>
+        <span id="result"></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const voltage = parseFloat(document.getElementById('voltage').value);
+      const current = parseFloat(document.getElementById('current').value);
+      const powerFactor = parseFloat(document.getElementById('powerFactor').value);
+      const primaryTurns = parseFloat(document.getElementById('primaryTurns').value);
+      const secondaryTurns = parseFloat(document.getElementById('secondaryTurns').value);
+      const frequency = parseFloat(document.getElementById('frequency').value);
+
+      if (!isNaN(voltage) && !isNaN(current) && !isNaN(powerFactor) &&
+          !isNaN(primaryTurns) && !isNaN(secondaryTurns) && !isNaN(frequency)) {
+        const power = Math.sqrt(3) * voltage * current * powerFactor;
+        document.getElementById('result').textContent = power.toFixed(2) + ' Вт';
+      } else {
+        alert('Пожалуйста, введите числовые значения для всех полей.');
+      }
+    }
+  </script>
+</body>
+</html>
