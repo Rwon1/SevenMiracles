@@ -11,3 +11,4 @@
 )
 ![Пример 5](![2023-11-28_18-18-18](https://github.com/Rwon1/SevenMiracles/assets/125397526/2d5e3430-a98b-4837-adf5-6e74d335b31e)
 )
+![2023-11-28_18-18-18](https://github.com/Rwon1/SevenMiracles/assets/125397526/f3db7304-9b8f-4a13-9eac-23ca9389db32)
