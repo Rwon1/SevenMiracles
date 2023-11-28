@@ -1,10 +1,13 @@
 # SevenMiracles
 ## Примеры работы
 
-![Пример 1](![2023-11-28_18-13-23](https://github.com/Rwon1/SevenMiracles/assets/125397526/504db24e-2779-4be1-8360-4c585e4a5b3a))
-
-
-![Пример 2](ссылка_на_изображение_2)
-![Пример 3](ссылка_на_изображение_3)
-![Пример 4](ссылка_на_изображение_4)
-![Пример 5](ссылка_на_изображение_5)
+![Пример 1](![2023-11-28_18-13-23](https://github.com/Rwon1/SevenMiracles/assets/125397526/c418bc57-5fc6-4a05-9952-09d336e4b765)
+)
+![Пример 2](![2023-11-28_18-18-51](https://github.com/Rwon1/SevenMiracles/assets/125397526/fc24fdd1-8e70-43dc-9125-9cd279e26dc0)
+)
+![Пример 3](![2023-11-28_18-19-58](https://github.com/Rwon1/SevenMiracles/assets/125397526/0fcd1b64-1e56-4324-a936-db923c3b6d01)
+)
+![Пример 4](![2023-11-28_18-19-28](https://github.com/Rwon1/SevenMiracles/assets/125397526/19ec3ad4-b248-43c8-b825-131422ebc9ea)
+)
+![Пример 5](![2023-11-28_18-18-18](https://github.com/Rwon1/SevenMiracles/assets/125397526/2d5e3430-a98b-4837-adf5-6e74d335b31e)
+)
