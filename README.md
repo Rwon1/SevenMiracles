@@ -1,7 +1,7 @@
 # SevenMiracles
 ## Примеры работы
 
-![Пример 1]([2023-11-28_18-13-23](https://github.com/Rwon1/SevenMiracles/assets/125397526/504db24e-2779-4be1-8360-4c585e4a5b3a))
+![Пример 1](![2023-11-28_18-13-23](https://github.com/Rwon1/SevenMiracles/assets/125397526/504db24e-2779-4be1-8360-4c585e4a5b3a))
 
 
 ![Пример 2](ссылка_на_изображение_2)
