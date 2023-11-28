@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Калькулятор расхода топлива на холостом ходу</title>
+  <style>
+    /* Стили для внешнего вида */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #3494e6, #ec6ead);
+      animation: changeBackground 8s infinite alternate;
+    }
+    @keyframes changeBackground {
+      from {
+        background: linear-gradient(135deg, #3494e6, #ec6ead);
+      }
+      to {
+        background: linear-gradient(135deg, #ec6ead, #3494e6);
+      }
+    }
+    .calculator {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      width: 400px;
+      text-align: center;
+      animation: scaleCalculator 0.5s ease-out, fadeIn 0.5s ease-out;
+    }
+    @keyframes scaleCalculator {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 24px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    label {
+      margin-bottom: 8px;
+      color: #555;
+      font-size: 16px;
+    }
+    input[type="number"] {
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 80%;
+      max-width: 300px;
+      font-size: 16px;
+      outline: none;
+    }
+    button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      background-color: #ff7e5f;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-size: 16px;
+      outline: none;
+    }
+    button:hover {
+      background-color: #ff6b3f;
+    }
+    p {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+      font-size: 18px;
+    }
+    .steps {
+      margin-top: 20px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      padding: 15px;
+      text-align: left;
+      background-color: #f9f9f9;
+      animation: fadeIn 0.5s ease; /* Анимация появления блока с шагами */
+    }
+    .step {
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: fadeIn 0.5s ease forwards; /* Анимация для каждого шага */
+    }
+    .step:last-child {
+      margin-bottom: 0;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h1>Калькулятор расхода топлива на холостом ходу</h1>
+    <form>
+      <label for="cylinderVolume">Объём цилиндра (в литрах):</label>
+      <input type="number" id="cylinderVolume">
+
+      <label for="cylinderCount">Количество цилиндров:</label>
+      <input type="number" id="cylinderCount">
+
+      <label for="idleRPM">Обороты холостого хода в минуту:</label>
+      <input type="number" id="idleRPM">
+
+      <label for="airFuelRatio">Соотношение воздуха и топлива (AFR):</label>
+      <input type="number" id="airFuelRatio">
+
+      <button type="button" onclick="calculateFuelConsumption()">Рассчитать</button>
+    </form>
+
+    <p>Расход топлива на холостом ходу: <span id="result"></span> литров в минуту</p>
+
+    <!-- Блок для отображения промежуточных шагов -->
+    <div class="steps" id="steps"></div>
+  </div>
+
+  <script>
+    // Функция для расчёта расхода топлива
+    function calculateFuelConsumption() {
+      // Получаем значения из полей ввода
+      const cylinderVolume = parseFloat(document.getElementById('cylinderVolume').value);
+      const cylinderCount = parseInt(document.getElementById('cylinderCount').value);
+      const idleRPM = parseInt(document.getElementById('idleRPM').value);
+      const airFuelRatio = parseFloat(document.getElementById('airFuelRatio').value);
+
+      // Очищаем содержимое блока с шагами
+      document.getElementById('steps').innerHTML = '';
+
+      // Формула для расчёта объёма впускного воздуха (VE)
+      const VE = (cylinderVolume * cylinderCount * idleRPM) / (2 * 60);
+      displayStep(`Объем впускного воздуха (VE): ${VE.toFixed(2)} л/мин`);
+
+      // Формула для расчёта количества топлива (MF)
+      const MF = VE / airFuelRatio;
+      displayStep(`Количество топлива (MF): ${MF.toFixed(2)} л/мин`);
+
+      // Округляем результат до двух знаков после запятой
+      const result = MF.toFixed(2);
+      // Выводим результат на страницу
+      document.getElementById('result').innerText = result;
+    }
+
+    // Функция для отображения промежуточных шагов
+    function displayStep(step) {
+      const stepsDiv = document.getElementById('steps');
+      const stepElement = document.createElement('div');
+      stepElement.classList.add('step');
+      stepElement.innerText = step;
+      stepsDiv.appendChild(stepElement);
+    }
+  </script>
+</body>
+</html>
