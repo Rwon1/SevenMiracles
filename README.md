@@ -1,7 +1,7 @@
 # SevenMiracles
 ## Примеры работы
 
-![Пример 1](!![image](https://github.com/Rwon1/SevenMiracles/assets/125397526/7d797588-35e3-443a-bdff-bac173a4b95c)
+![Пример 1](!)[image](https://github.com/Rwon1/SevenMiracles/assets/125397526/7d797588-35e3-443a-bdff-bac173a4b95c)
 
 
 Добавить названия калькуляторам
