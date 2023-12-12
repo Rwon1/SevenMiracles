@@ -2,115 +2,168 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>калькуляторы</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="stylessss.css">
+  <title>Калькуляторы с анимированным фоном</title>
   <style>
-    /* Ваши стили здесь */
-    /* Стили для анимированных частиц */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, #ffffff, #f4f4f4);
+      overflow: hidden;
+      background-color: #f3f3f3;
     }
 
-    .particles {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100px;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .particle {
+    .background {
       position: absolute;
-      width: 8px;
-      height: 8px;
-      background-color: #007bff;
-      border-radius: 50%;
-      animation: particleAnimation 10s linear infinite;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
     }
 
-    @keyframes particleAnimation {
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      background: linear-gradient(to right, #ffbf00, #ff0080);
+      animation: animateShapes 15s linear infinite alternate;
+    }
+
+    @keyframes animateShapes {
       0% {
-        transform: translateY(0) rotate(0deg);
+        transform: scale(1);
       }
       100% {
-        transform: translateY(-800px) rotate(360deg);
+        transform: scale(1.5);
       }
+    }
+
+    .shape:nth-child(1) {
+      top: 10%;
+      left: 15%;
+      width: 300px;
+      height: 300px;
+      animation-duration: 20s;
+    }
+
+    .shape:nth-child(2) {
+      top: 25%;
+      right: 10%;
+      width: 200px;
+      height: 200px;
+      animation-duration: 18s;
+    }
+
+    .shape:nth-child(3) {
+      top: 50%;
+      left: 25%;
+      width: 350px;
+      height: 350px;
+      animation-duration: 22s;
+    }
+
+    .shape:nth-child(4) {
+      bottom: 5%;
+      right: 30%;
+      width: 250px;
+      height: 250px;
+      animation-duration: 16s;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+      z-index: 1;
+    }
+
+    .calculator-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .calculator-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 250px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: #333;
+      text-align: center; /* Центрируем текст внутри карточки */
+    }
+
+    .calculator-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .calculator-card h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .calculator-card p {
+      margin-bottom: 20px;
+      color: #666;
+    }
+
+    .calculator-card a {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      text-decoration: none; /* Убираем подчеркивание */
+    }
+
+    .calculator-card a:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
-
-<div class="calculator-container">
-    <div class="calculator-container">
-        <div class="calculator">
-          <i class="fas fa-bolt fa-3x"></i>
-          <h2>Калькулятор кароткого замыкания</h2>
-          <p>Простое короткое замыкание</p>
-          <a href="k2.html">Открыть калькулятор</a>
-        </div>
-      
-        <div class="calculator">
-          <i class="far fa-clock fa-3x"></i>
-          <h2>Калькулятор трехфазного трансформатора</h2>
-          <p>Активная мощность (P)</p>
-          <a href="k1.html">Открыть калькулятор</a>
-        </div>
-      
-        <div class="calculator">
-          <i class="far fa-clock fa-3x"></i>
-          <h2>расхода топлива</h2>
-          <p>на холостом ходу</p>
-          <a href="">Открыть калькулятор</a>
-        </div>
-      
-        <div class="calculator">
-          <i class="fas fa-database fa-3x"></i>
-          <h2>Калькулятор обмоток трансформатора</h2>
-          <p>N1,N2</p>
-          <a href="k3.html">Открыть калькулятор</a>
-        </div>
-      
-        <div class="calculator">
-          <i class="fas fa-wave-square fa-3x"></i>
-          <h2>Калькулятор </h2>
-          <p>Калькулятор </p>
-          <a href="">Открыть калькулятор</a>
-        </div>
-      
-        <div class="calculator">
-          <i class="far fa-clock fa-3x"></i>
-          <h2>Калькулятор </h2>
-          <p>Калькулятор</p>
-          <a href="time_calculator.html">Открыть калькулятор</a>
-        </div>
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  <div class="content">
+    <div class="calculator-links">
+      <a href="(2)Short-circuit-current.html" class="calculator-card">
+        <h2>Калькулятор краткого замыкания</h2>
+        <p>В замкнутой цепи</p>
+      </a>
+      <a href="(1)Power-3x-transformer.html" class="calculator-card">
+        <h2>Калькулятор трехфазного трансформатора</h2>
+        <p>Активной мощности</p>
+      </a>
+      <a href="(4)Fuel-consumption.html" class="calculator-card">
+        <h2>Калькулятор расхода топлива</h2>
+        <p>На холостом ходу</p>
+      </a>
+      <a href="(3)transformer-windings.html" class="calculator-card">
+        <h2>Калькулятор рассчета обмоток трансформатора</h2>
+        <p>Витков: первичной, вторичной обмоток</p>
+      </a>
+      <a href="(5)Panel-Power-Generation.html" class="calculator-card">
+        <h2>Калькулятор солнечной энергии</h2>
+        <p>Ожидаемая выработка энергии солнечной панели</p>
+      </a>
+      <a href="(6)Power Consumption.html" class="calculator-card">
+        <h2>Калькулятор Потребляемой Мощности</h2>
+        <p>Общая потребляемая мощность(Вт)</p>
+      </a>
     </div>
-</div>
-
-<!-- Анимированные частицы -->
-<div class="particles"></div>
-
-<script>
-  // JavaScript для создания частиц (опционально)
-  const particles = document.querySelector('.particles');
-
-  function createParticle() {
-    const particle = document.createElement('div');
-    particle.classList.add('particle');
-    particle.style.left = `${Math.random() * 100}%`;
-    particles.appendChild(particle);
-  }
-
-  // Создаем частицы
-  for (let i = 0; i < 30; i++) {
-    createParticle();
-  }
-</script>
-
+  </div>
 </body>
 </html>
