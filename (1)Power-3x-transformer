@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Калькулятор трехфазного трансформатора</title>
+  <title>Калькулятор расчета мощности трехфазного трансформатора</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
@@ -43,7 +43,7 @@
       padding: 30px;
       position: relative;
       overflow: hidden;
-      z-index: 1; /* Устанавливаем z-index, чтобы калькулятор находился выше фона */
+      z-index: 1; /* Установим z-index, чтобы калькулятор находился выше фона */
     }
 
     button.btn-success {
@@ -57,14 +57,14 @@
       background-position: right center;
     }
 
-    /* Остальные стили не изменялись */
+    /* Остальные стили*/
   </style>
 </head>
 <body>
   <div class="background-animation"></div>
   <div class="container">
     <div class="calculator">
-      <h1>Калькулятор трехфазного трансформатора</h1>
+      <h1>Калькулятор расчета мощности трехфазного трансформатора:</h1>
       <div class="form-group row">
         <label for="voltage" class="col-sm-6 col-form-label text-right">Фазное напряжение (V):</label>
         <div class="col-sm-6">
@@ -103,7 +103,7 @@
       </div>
       <button onclick="calculate()" class="btn btn-success">Рассчитать</button>
       <div class="result">
-        <label for="result">Активная мощность (P):</label>
+        <label for="result">Активная мощность (P)(Ват/час):</label>
         <span id="result"></span>
       </div>
     </div>
