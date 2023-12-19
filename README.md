@@ -5,6 +5,7 @@
 ![unknown_2023 12 19-19 13_1](https://github.com/Rwon1/SevenMiracles/assets/125397526/8d2b15a1-bb9f-499e-b9b1-a451596ef1fc)
 
 ## Наши карточки
+![unknown_2023 12 19-19 53_1](https://github.com/Rwon1/SevenMiracles/assets/125397526/ba5f5c7d-74e8-49f0-8f81-33fa0307f677)
 
 
 ## Пример руководителя команды
