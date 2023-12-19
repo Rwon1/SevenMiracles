@@ -4,6 +4,12 @@
 ## Основное меню
 ![unknown_2023 12 19-19 13_1](https://github.com/Rwon1/SevenMiracles/assets/125397526/8d2b15a1-bb9f-499e-b9b1-a451596ef1fc)
 
+## Наши карточки
+
+
+## Пример карточки
+![unknown_2023 12 19-19 49_1](https://github.com/Rwon1/SevenMiracles/assets/125397526/7a0aa212-39ac-432f-8e4a-5c726d1159d9)
+
 
 ## Особенности
 
