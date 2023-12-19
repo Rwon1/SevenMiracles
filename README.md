@@ -58,7 +58,7 @@
 ### HTML
 ### CSS
 ### JavaScript
-
+Bootstrap | Tailwind | Font Awesome
 ## Как использовать
 
 1. Клонируйте репозиторий: `git clone https://github.com/your-username/electrical-calculators.git`
